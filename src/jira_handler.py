@@ -1,0 +1,156 @@
+import os, json, requests, re
+
+def load_jira(work_item):
+  # read jira body
+  issue_key = work_item.get("key") or ""
+  issue_fields = (work_item.get("fields") or {})
+
+  summary = issue_fields.get("summary") or ""
+  desc_field = issue_fields.get("description")
+  description = desc_field if isinstance(desc_field, str) else json.dumps(desc_field or {})
+
+  # fetch attachments
+  payloads, pdf_bytes = fetch_jira_attachments(issue_key)
+  # parsed = try_parse_json_attachments(files)
+
+  return {
+    "summary": summary, 
+    "description": description, 
+    "payloads": payloads, 
+    "pdf_bytes": pdf_bytes
+  }
+
+def fetch_jira_attachments(issue_key: str):
+  jira_base_url = os.environ["JIRA_BASE_URL"]
+  jira_email = os.environ["JIRA_EMAIL"]
+  jira_api_token = os.environ["JIRA_API_TOKEN"]
+
+  # 1) List attachments that came with the initial payload
+  url = f"{jira_base_url}/rest/api/3/issue/{issue_key}?fields=attachment"
+  r = requests.get(url, auth=(jira_email, jira_api_token), timeout=20)
+  r.raise_for_status()
+  fields = r.json()["fields"]
+  attachments = fields.get("attachment", [])
+
+  # 2) Download each attachment
+  files = [
+    {
+      "filename": attachment["filename"],
+      "mimeType": attachment.get("mimeType"),
+      "bytes": requests.get(attachment["content"], auth=(jira_email, jira_api_token), timeout=30).content
+    }
+    for attachment in attachments
+  ]
+
+  count = len(files)
+  print(f"Found {count} attachment(s)")
+
+  # 3) filter irs payloads
+  payloads = [
+    payload for payload in files
+    if (payload.get("mimeType") or "").lower() in ("text/plain", "application/json")
+       or (payload.get("filename") or "").lower().endswith((".txt", ".json"))
+  ]
+
+  # 4) convert pdfs to bytes
+  pdf_bytes = [
+    {"filename": f.get("filename") or "irs.pdf", "bytes": f.get("bytes")}
+    for f in files
+    if (f.get("mimeType") or "").lower().startswith("application/pdf")
+       or (f.get("filename") or "").lower().endswith(".pdf")
+  ]
+
+  return payloads, pdf_bytes
+
+
+def add_comment(work_item, comments: str):
+  jira_base_url = os.environ["JIRA_BASE_URL"]
+  jira_email = os.environ["JIRA_EMAIL"]
+  jira_api_token = os.environ["JIRA_API_TOKEN"]
+
+  issue_key = work_item.get("key") or ""
+
+  url = f"{jira_base_url}/rest/api/3/issue/{issue_key}/comment"
+
+  body = build_body(comments)
+
+  response = requests.post(
+    url,
+    json=body,
+    auth=(jira_email, jira_api_token),
+    headers={"Content-Type": "application/json"}
+  )
+
+  if response.status_code == 201:
+    print("Comment added successfully!")
+  else:
+    print(f"Failed: {response.status_code}")
+    print(response.text)
+
+
+def build_body(comments):
+  # Try to treat comments as ADF if it is JSON
+  comments_adf = None
+  if isinstance(comments, dict) and comments.get("type") == "doc":
+    comments_adf = comments
+  elif isinstance(comments, str):
+    try:
+      parsed = json.loads(comments)
+      if isinstance(parsed, dict) and parsed.get("type") == "doc":
+        comments_adf = parsed
+    except json.JSONDecodeError:
+      pass
+
+  content = [
+    {"type": "heading", "attrs": {"level": 3}}
+  ]
+
+  if comments_adf:            # ✅ merge ADF nodes directly (NO quoting)
+    content.extend(comments_adf.get("content", []))
+  else:                       # ✅ convert plaintext to ADF blocks
+    content.extend(text_to_adf_blocks(comments))
+
+  # signature line
+  content.append({
+    "type": "paragraph",
+    "content": [{"type": "text", "text": "Your friend, Claude 👍"}]
+  })
+
+  return {"body": {"type": "doc", "version": 1, "content": content}}
+
+def text_to_adf_blocks(text: str):
+  # minimal mapper: blank line => new paragraph, "- " => bullet item, "\n" => hardBreak
+  lines = text.splitlines()
+  blocks, bullet_items, para_chunks = [], [], []
+
+  def flush_paragraph():
+    if para_chunks:
+      blocks.append({"type": "paragraph", "content": para_chunks.copy()})
+      para_chunks.clear()
+
+  def flush_bullets():
+    if bullet_items:
+      blocks.append({"type": "bulletList", "content": bullet_items.copy()})
+      bullet_items.clear()
+
+  for raw in lines + [""]:  # sentinel to flush at end
+    line = raw.rstrip("\r")
+    if line.startswith("- "):               # bullet
+      flush_paragraph()
+      bullet_items.append({
+        "type": "listItem",
+        "content": [{
+          "type": "paragraph",
+          "content": [{"type": "text", "text": line[2:]}]
+        }]
+      })
+    elif line.strip() == "":                # blank => new block
+      flush_bullets()
+      flush_paragraph()
+    else:                                   # normal text line
+      flush_bullets()
+      if para_chunks:
+        para_chunks.append({"type": "hardBreak"})
+      para_chunks.append({"type": "text", "text": line})
+
+  return blocks

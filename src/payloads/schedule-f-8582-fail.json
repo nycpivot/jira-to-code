@@ -1,0 +1,1663 @@
+{
+    "header": {
+        "taxPrd": "202412",
+        "mftCd": "30",
+        "correlationId": "temp12940515715903713616.xml",
+        "transactionId": "1759b9ec-8315-43d6-b21b-04d963c01f39",
+        "calcDt": "09/22/2025",
+        "reportDt": "12/31/2024",
+        "submitterId": "ECM",
+        "primaryTIN": "845217896",
+        "secondaryTIN": ""
+    },
+    "body": {
+        "forms": [
+            {
+                "formNum": "IRS1040",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/IndividualReturnFilingStatusCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/VirtualCurAcquiredDurTYInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "false",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalExemptPrimaryAndSpouseCnt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/OtherDependentsListedCnt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalExemptionsCnt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalAdditionalIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalAdjustmentsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "2826",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/AdjustedGrossIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "37174",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalItemizedOrStandardDedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "14600",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/QualifiedBusinessIncomeDedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "4515",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalDeductionsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "19115",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TaxableIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "18059",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1937",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalTaxBeforeCrAndOthTaxesAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1937",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalNonrefundableCreditsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TaxLessCreditsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1937",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalOtherTaxesAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "5652",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "7589",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/FormW2WithheldTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TaxWithheldOtherAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/WithholdingTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/EICEligibilityLiteralCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "NO",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/TotalOtherPaymentsRfdblCrAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/RefundableCreditsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/AppliedToEsTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/OwedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "7589",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/PrimaryOccupationTxt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "FARMER",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040/RefundProductCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "NO FINANCIAL PRODUCT",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040Schedule1",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule1/NetFarmProfitLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule1/TotalAdditionalIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule1/DeductibleSelfEmploymentTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "2826",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule1/TotalAdjustmentsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "2826",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040Schedule2",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule2/SelfEmploymentTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "5652",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule2/UnrprtdSocSecAndMedcrTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040Schedule2/TotalOtherTaxesAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "5652",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040ScheduleF",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName/BusinessNameLine1Txt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "SCHF D SCH F TEST",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/SSN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "845217896",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/PrincipalProductDesc",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "PUMPKIN FARMING",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/AgriculturalActivityCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "111210",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MethodOfAccountingCashInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "X",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/EIN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "845126985",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MateriallyParticipatedInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "false",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/RequiredToFileForms1099Ind",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "false",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/SalesOfLvstckBghtForResaleAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "15000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CostOfLvstckBghtForResaleAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "10000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/PurchasedProfitAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/GrossIncomeAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/DeprecAndSect179ExpnsDedAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/FertilizerAndLimeExpenseAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "15000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/TotalExpensesAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "15000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/NetFarmProfitLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/AllInvestmentIsAtRiskInd",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "X",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040ScheduleF",
+                "sequenceNum": "2",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName/BusinessNameLine1Txt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "SCHF D SCH F TEST",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/SSN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "845217896",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/PrincipalProductDesc",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "DAIRY COWS",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/AgriculturalActivityCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "112210",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MethodOfAccountingCashInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "X",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/EIN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "854123698",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MateriallyParticipatedInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "false",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CostOfLvstckBghtForResaleAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "15000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/PurchasedProfitAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "-15000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/SaleOfProductsRaisedAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "20000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/GrossIncomeAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/DeprecAndSect179ExpnsDedAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/InsuranceAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "6000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/TotalExpensesAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "6000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/NetFarmProfitLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/AllInvestmentIsAtRiskInd",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "X",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040ScheduleF",
+                "sequenceNum": "3",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmProprietorName/BusinessNameLine1Txt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "SCHF D SCH F TEST",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/SSN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "845217896",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/PrincipalProductDesc",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "BEEF CATTLE",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/AgriculturalActivityCd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "112111",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MethodOfAccountingCashInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "X",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/EIN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "851159429",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/MateriallyParticipatedInd",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "true",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/RequiredToFileForms1099Ind",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "false",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/SalesOfLvstckBghtForResaleAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "65000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CostOfLvstckBghtForResaleAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "20000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/PurchasedProfitAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "45000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/AgriculturalProgramPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/CropInsProcAndDsstrPymtTxblAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmIncomeCashMethodGrp/GrossIncomeAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "45000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/DeprecAndSect179ExpnsDedAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/FeedPurchasedExpenseAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/TotalExpensesAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS1040ScheduleF/FarmExpensesGrp/NetFarmProfitLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "40000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS1040ScheduleSE",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/PersonNm",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "SCHF D SCH F TEST",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/SSN",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "845217896",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/NetFarmProfitLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/ConservationReserveProgPymtAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/NetNonFarmProfitLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/SETotalNetEarningsOrLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "40000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/MinimumProfitForSETaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "36940",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/CombinedSEAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "36940",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/MinAllowableChurchWagesAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/CombinedSEAndChurchWagesAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "36940",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/WagesSubjectToSSTAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/TotalWagesAndUnreportedTipsAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/AllowableSEAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "168600",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/TaxBaseAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "4581",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/SEBaseAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "1071",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/SelfEmploymentTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "5652",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS1040ScheduleSE/DeductibleSelfEmploymentTaxAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "2826",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS8582",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/NetRentalRealtyAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/OtherActivityIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/OtherActivityLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "11000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/PriorYearUnallowedOtherLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/NetOtherActivityAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "-11000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/TotalPassiveActivityAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "-11000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/TotalIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/TotalLossesAllowedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/NonParticipateActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "DAIRY COWS",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/CurrentYearNetLossAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1500",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/OverallLossAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1500",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp",
+                                "sequenceNum": "2",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/NonParticipateActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "PUMPKIN",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/CurrentYearNetLossAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/WrkshtPassiveGrp/OverallLossAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/TotalOtherCurrentYearIncomeAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/TotalOtherCurrentYearLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "11000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtPassiveGrp/TotalOtherPYUnallowedAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/UnallowedLossActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "DAIRY COWS",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/ReportingFormOrScheduleNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "SCH F L 34",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/F8582WrkshtLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/LossesPct",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "0.09",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/PriorYearUnallowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp",
+                                "sequenceNum": "2",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/UnallowedLossActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "PUMPKIN FARMING",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/ReportingFormOrScheduleNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "SCH F L 34",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/F8582WrkshtLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/LossesPct",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "0.91",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/WrkshtLossGrp/PriorYearUnallowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/TotalAllocationLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "11000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtLossGrp/TotalLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "11000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/AllowedLossActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "DAIRY COWS",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/ReportingFormOrScheduleNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "SCH F L 34",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/F8582WrkshtLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/PriorYearUnallowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "1000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/F8582WrkshtAllowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "0",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp",
+                                "sequenceNum": "2",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/AllowedLossActivityNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "PUMPKIN FARMING",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/ReportingFormOrScheduleNm",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "SCH F L 34",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/F8582WrkshtLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/PriorYearUnallowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "10000",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    },
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/WrkshtListActivityGrp/F8582WrkshtAllowedLossesAmt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "0",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/TotalLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "11000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/TotalUnallowedLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "11000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8582/ParentWrkshtListActivityGrp/TotalAllowedLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "0",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "formNum": "IRS8995",
+                "sequenceNum": "1",
+                "lineItems": [
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp",
+                        "sequenceNum": "1",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName/BusinessNameLine1Txt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "BEEF CATTLE",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/EIN",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "851159429",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/QlfyBusinessIncomeOrLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "45000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp",
+                        "sequenceNum": "2",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName/BusinessNameLine1Txt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "DAIRY COWS",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/EIN",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "854123698",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/QlfyBusinessIncomeOrLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp",
+                        "sequenceNum": "3",
+                        "lineItems": [
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName",
+                                "sequenceNum": "1",
+                                "lineItems": [
+                                    {
+                                        "lineItemReferenceKeyId": "",
+                                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/TradeOrBusinessName/BusinessNameLine1Txt",
+                                        "sequenceNum": "1",
+                                        "perReturnValueTxt": "PUMPKIN FARMING",
+                                        "taxCalculatorValueTxt": "",
+                                        "varianceValueTxt": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/EIN",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "845126985",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            },
+                            {
+                                "lineItemReferenceKeyId": "",
+                                "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedGrp/QlfyBusinessIncomeOrLossAmt",
+                                "sequenceNum": "1",
+                                "perReturnValueTxt": "5000",
+                                "taxCalculatorValueTxt": "",
+                                "varianceValueTxt": ""
+                            }
+                        ]
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TotQlfyBusinessIncomeOrLossAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "55000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TotQualifiedBusinessIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "55000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QBIComponentAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "11000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TotQlfyREITDivPTPIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/REITPTPComponentAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QBIDedBfrIncomeLimitationAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "11000",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TaxableIncomeBeforeQBIDedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "22574",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/NetCapitalGainAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/AdjustedTaxableIncomeAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "22574",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/IncomeLimitationAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "4515",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/QualifiedBusinessIncomeDedAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "4515",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TotQlfyBusLossCarryforwardAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    },
+                    {
+                        "lineItemReferenceKeyId": "",
+                        "lineNameTxt": "/IRS8995/TotQlfyREITDivPTPLossCfwdAmt",
+                        "sequenceNum": "1",
+                        "perReturnValueTxt": "0",
+                        "taxCalculatorValueTxt": "",
+                        "varianceValueTxt": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

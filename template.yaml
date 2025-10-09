@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda exposed via API Gateway HTTP API
+
+Globals:
+  Function:
+    CodeUri: src
+    Runtime: python3.12
+    Handler: main.main_handler
+    Timeout: 300
+    MemorySize: 256
+    Architectures: [x86_64]
+
+Resources:
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins: ['*']
+        AllowMethods: ['GET','POST','PUT','DELETE','OPTIONS']
+        AllowHeaders: ['*']
+
+  JiraToCode:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: JiraToCode
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        AnyRoute:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  ApiUrl:
+    Value: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com'
+    Description: Base URL
