@@ -7,7 +7,7 @@ Globals:
     CodeUri: src
     Runtime: python3.12
     Handler: main.main_handler
-    Timeout: 300
+    Timeout: 900
     MemorySize: 256
     Architectures: [x86_64]
 

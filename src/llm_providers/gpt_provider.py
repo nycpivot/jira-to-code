@@ -19,7 +19,7 @@ class GptProvider(LLMProvider):
     payload = {"model": self.config.model, "messages": messages}
 
     ALLOWED = {
-      "temperature","top_p","max_tokens","n","stop",
+      "top_p","max_output_tokens","n","stop",
       "presence_penalty","frequency_penalty","logit_bias",
       "tool_choice","tools","response_format","seed","user"
     }
@@ -35,4 +35,6 @@ class GptProvider(LLMProvider):
 
     data = resp.json()
     text = data["choices"][0]["message"]["content"]
-    return Generation(text=text, raw=data)
+    model = self.config.model
+
+    return Generation(llm=model, text=text, raw=data)

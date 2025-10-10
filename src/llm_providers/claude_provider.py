@@ -36,4 +36,6 @@ class ClaudeProvider(LLMProvider):
 
     data = resp.json()
     text = data["content"][0]["text"]
-    return Generation(text=text, raw=data)
+    model = self.config.model
+
+    return Generation(llm=model, text=text, raw=data)
