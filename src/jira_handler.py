@@ -17,13 +17,13 @@ def load_jira(work_item):
   description = desc_field if isinstance(desc_field, str) else json.dumps(desc_field or {})
 
   # fetch attachments
-  payloads, pdf_bytes = fetch_jira_attachments(issue_key)
+  payloads, pdfs = fetch_jira_attachments(issue_key)
 
   return {
     "summary": summary, 
     "description": description, 
     "payloads": payloads, 
-    "pdf_bytes": pdf_bytes
+    "pdfs": pdfs
   }
 
 
@@ -60,14 +60,14 @@ def fetch_jira_attachments(issue_key: str):
   ]
 
   # 4) convert pdfs to bytes
-  pdf_bytes = [
+  pdfs = [
     {"filename": f.get("filename") or "irs.pdf", "bytes": f.get("bytes")}
     for f in files
     if (f.get("mimeType") or "").lower().startswith("application/pdf")
        or (f.get("filename") or "").lower().endswith(".pdf")
   ]
 
-  return payloads, pdf_bytes
+  return payloads, pdfs
 
 
 def add_comment(work_item, comments: str, model_signature: str):
@@ -79,10 +79,12 @@ def add_comment(work_item, comments: str, model_signature: str):
 
   url = f"{jira_base_url}/rest/api/3/issue/{issue_key}/comment"
 
-  body = build_body(comments, model_signature)
+  body = _build_body(comments, model_signature)
 
   body = strip_empty_headings(body)
   body = wrap_table_text_in_paragraph(body)
+
+  print(f"COMMENT: {body}")
 
   response = requests.post(
     url,
@@ -95,11 +97,30 @@ def add_comment(work_item, comments: str, model_signature: str):
     print("Comment added successfully!")
   else:
     print(f"Failed: {response.status_code}")
-    log.info(response.text)
-    log.info(f"JIRA COMMENT BODY: {body}")
 
 
-def build_body(comments, model_signature):
+def tag_comment(id):
+  jira_base_url = os.environ.get("JIRA_BASE_URL")
+  jira_email = os.environ.get("JIRA_EMAIL")
+  jira_api_token = os.environ.get("JIRA_API_TOKEN")
+
+  auth = (jira_email, jira_api_token)
+  header = {"Accept":"application/json","Content-Type":"application/json"}
+
+  prop = {
+    "origin":"llm",
+    "provider":"anthropic",
+    "model":"claude-3-5-sonnet-latest",
+    "runId":"7b3f-9a1c",
+    "pipeline":"jira-to-code",
+    "createdAt": datetime.datetime.utcnow().isoformat() + "Z"
+  }
+  p = requests.put(f"{jira_base_url}/rest/api/3/comment/{id}/properties/llm.meta",
+                  auth=auth, headers=header, json=prop)
+  p.raise_for_status()
+
+
+def _build_body(comments, model_signature):
   # Try to treat comments as ADF if it is JSON
   comments_adf = None
   if isinstance(comments, dict) and comments.get("type") == "doc":
@@ -116,9 +137,9 @@ def build_body(comments, model_signature):
     {"type": "heading", "attrs": {"level": 3}}
   ]
 
-  if comments_adf:            # ✅ merge ADF nodes directly (NO quoting)
+  if comments_adf:
     content.extend(comments_adf.get("content", []))
-  else:                       # ✅ convert plaintext to ADF blocks
+  else:
     content.extend(text_to_adf_blocks(comments))
 
   # signature line

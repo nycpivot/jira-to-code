@@ -1,4 +1,7 @@
-import re, json
+import re, json, base64
+
+from io import BytesIO
+from pdfminer.high_level import extract_text
 
 from typing import List, Dict, Any
 
@@ -78,6 +81,25 @@ def normalize_pdfs(files):
 
     out.append(g)
 
+  return out
+
+
+def pdfs_to_text(files, strict=False):
+  """
+  Input: output of normalize_pdfs(files)
+  Output: list[{"filename": str, "text": str}]
+  - No OCR. If a PDF has no text layer, text == "".
+  - Non-PDFs are ignored.
+  """
+  out = []
+  for f in files or []:
+    b64 = f.get("b64")
+    if not b64:  # skip non-PDFs or entries without bytes
+      continue
+    raw = base64.b64decode(b64)
+    txt = (extract_text(BytesIO(raw)) or "").strip()
+    out.append({"filename": f.get("filename"), "text": txt})
+    
   return out
 
 

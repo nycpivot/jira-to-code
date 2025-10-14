@@ -3,8 +3,9 @@ import logging, boto3, json, os, base64, pathlib
 from jira_handler import load_jira
 from jira_handler import add_comment
 
-from model_handler import process_payload
-from model_handler import process_jira_requirements
+from model_handler import analyze_taxform_payload
+from model_handler import analyze_irs_documents
+from model_handler import analyze_jira_requirements
 from model_handler import build_code
 
 from format_handler import strip_code_fences
@@ -57,42 +58,59 @@ def main_handler(event, context):
   # # Log everything so you can see it in CloudWatch
   # print("=== Incoming headers ===")
   # log.info(json.dumps(headers, ensure_ascii=False))
-  # print("=== Incoming body ===")
-  # log.info(json.dumps(work_item, ensure_ascii=False))
+  print("*** Incoming body ***")
+  log.info(json.dumps(work_item, ensure_ascii=False))
+
 
   # **************************************************************
-  # send payload to llm for analysis
+  # 1) send payload to llm for analysis
   # **************************************************************
-  # 1) send first prompt to llm
-  process_payload_response, messages = process_payload(work_item_details)
+  # send first prompt to llm
+  taxform_analysis = analyze_taxform_payload(work_item_details)
 
-  comments1 = strip_code_fences(process_payload_response.text)
-  model_signature1 = process_payload_response.llm
+  # create jira comment
+  taxform_analysis_comments = strip_code_fences(taxform_analysis.text)
+  model_signature = taxform_analysis.llm
 
-  # 2) add first observations of payload as a comment in jira
-  add_comment(work_item, comments1, model_signature1)
+  # post jira comment
+  taxform_analysis_comments_response = add_comment(
+    work_item, taxform_analysis_comments, model_signature)
   # --------------------------------------------------------------
 
 
   # **************************************************************
-  # send jira use case summary and description as followup instructions
+  # 2) send jira use case summary and description as followup instructions
   # **************************************************************
-  # 1) send jira summary and description
-  response_to_jira_reqs, messages = process_jira_requirements(work_item_details, messages)
+  # send jira summary and description
+  jira_reqs_analysis = analyze_jira_requirements(work_item_details)
 
-  # 2) add llm response as another comment to jira
-  comments2 = strip_code_fences(response_to_jira_reqs.text)
-  model_signature2 = response_to_jira_reqs.llm
+  # add llm response as another comment to jira
+  jira_reqs_analysis_comments = strip_code_fences(jira_reqs_analysis.text)
+  model_signature = jira_reqs_analysis.llm
 
-  add_comment(work_item, comments2, model_signature2)
+  add_comment(work_item, jira_reqs_analysis_comments, model_signature)
   # --------------------------------------------------------------
 
 
   # **************************************************************
-  # generate code
+  # 3) send irs documents to llm for analysis
   # **************************************************************
-  # 1) prompt llm to generate project and code
-  build_code_reponse, messages = build_code(work_item_details, messages)
+  # send prompt to llm
+  irs_documents_analysis = analyze_irs_documents(work_item_details)
+
+  # add llm response as another comment to jira
+  irs_documents_analysis_comments = strip_code_fences(irs_documents_analysis.text)
+  model_signature = irs_documents_analysis.llm
+
+  add_comment(work_item, irs_documents_analysis_comments, model_signature)
+  # --------------------------------------------------------------
+
+
+  # **************************************************************
+  # 4) generate code
+  # **************************************************************
+  # prompt llm to generate project and code
+  build_code_reponse = build_code(work_item_details)
 
   code_path = pathlib.Path("/tmp/codegen")
 
@@ -104,7 +122,7 @@ def main_handler(event, context):
     ]
   }
 
-  # 2) source code is returns in a zip file as a decoded string
+  # source code is returned in a zip file as a decoded string
   # print(f"RESPONSE_TO_CODEGEN: {llm_code}")
   encoded_code = write_code(msg, code_path)
   # print(f"ENCODED JAVA: {encoded_code}")
@@ -112,17 +130,14 @@ def main_handler(event, context):
 
 
   # **************************************************************
-  # push code to github
+  # 5) push code to github
   # **************************************************************
-  # 1) push generated code to github
-  model_signature3 = response_to_jira_reqs.llm
-
+  # push generated code to github
   branch_name, pr_url = push_branch_and_open_pr(
-    work_item, code_path, model_signature3)
+    work_item, code_path, model_signature)
 
   adf_body = codegen_adf(branch_name, pr_url)
-  # payload_json = json.dumps(adf_body)
 
-  # 2) give jira the locations of the branch and pull request
-  add_comment(work_item, adf_body, model_signature3)
+  # give jira the locations of the branch and pull request
+  add_comment(work_item, adf_body, model_signature)
   # --------------------------------------------------------------
