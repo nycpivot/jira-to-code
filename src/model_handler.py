@@ -206,8 +206,10 @@ def analyze_irs_documents(work_item_details):
   response = provider.generate(
     request_timeout=900, temperature=0.2, max_tokens=60000)
 
+  assistant_message = strip_code_fences(response.text)
+
   # append reply to the dialogue
-  provider.append_assistant_message(response.text)
+  provider.append_assistant_message(assistant_message)
 
   return response
 

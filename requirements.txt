@@ -1,0 +1,5 @@
+boto3==1.40.52
+fastapi==0.119.0
+uvicorn[standard]
+pdfminer.six==20231228
+Requests==2.32.5
