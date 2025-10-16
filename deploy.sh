@@ -23,5 +23,33 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.0/cert-manager.yaml
 
 
+# sa
+aws eks describe-cluster --name jira-to-code --query "cluster.identity.oidc.issuer" --output text
+
+aws iam create-role \
+  --role-name jira-to-code-secrets \
+  --assume-role-policy-document file://trust-policy.json
+
+aws iam put-role-policy \
+  --role-name jira-to-code-secrets \
+  --policy-name secretsmanager-access \
+  --policy-document '{
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Allow",
+      "Action": ["secretsmanager:GetSecretValue"],
+      "Resource": "arn:aws:secretsmanager:us-east-1:806869445083:secret:jira-to-code-*"
+    }]
+  }'
+
+kubectl apply -f sa.yaml
+kubectl set serviceaccount deploy/jira-to-code jira-to-code
+
+
+
+
+
+
+
 # manual troubleshooting
 kubectl logs deploy/jira-to-code --tail=200

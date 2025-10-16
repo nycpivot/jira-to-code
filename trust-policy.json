@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::806869445083:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/EB4A96F423C6503DAE264278C4AA0603"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.us-east-1.amazonaws.com/id/EB4A96F423C6503DAE264278C4AA0603:aud": "sts.amazonaws.com",
+          "oidc.eks.us-east-1.amazonaws.com/id/EB4A96F423C6503DAE264278C4AA0603:sub": "system:serviceaccount:default:jira-to-code"
+        }
+      }
+    }
+  ]
+}

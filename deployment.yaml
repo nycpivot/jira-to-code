@@ -10,6 +10,7 @@ spec:
     metadata:
       labels: { app: jira-to-code }
     spec:
+      serviceAccountName: jira-to-code
       containers:
       - name: api
         image: 806869445083.dkr.ecr.us-east-1.amazonaws.com/private/jira-to-code:latest
