@@ -1,4 +1,4 @@
-import logging, os, json, requests
+import logging
 
 from textwrap import dedent
 
@@ -13,8 +13,7 @@ from llm_providers.base import LLMProvider
 from llm_providers.llm_factory import get_provider
 
 # output to aws cloudwatch
-log = logging.getLogger()
-log.setLevel(logging.INFO)
+log = logging.getLogger(__name__)
 
 def get_system_prompt():
   # system_prompt = dedent("""

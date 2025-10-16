@@ -30,17 +30,35 @@ aws iam create-role \
   --role-name jira-to-code-secrets \
   --assume-role-policy-document file://trust-policy.json
 
+# 1) Attach inline policy to your app role (IRSA) for CloudWatch Logs writes
 aws iam put-role-policy \
   --role-name jira-to-code-secrets \
-  --policy-name secretsmanager-access \
+  --policy-name cw-logs-write \
   --policy-document '{
     "Version": "2012-10-17",
-    "Statement": [{
-      "Effect": "Allow",
-      "Action": ["secretsmanager:GetSecretValue"],
-      "Resource": "arn:aws:secretsmanager:us-east-1:806869445083:secret:jira-to-code-*"
-    }]
+    "Statement": [
+      {
+        "Sid": "LogsManage",
+        "Effect": "Allow",
+        "Action": ["logs:CreateLogGroup"],
+        "Resource": "*"
+      },
+      {
+        "Sid": "LogsWrite",
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:DescribeLogStreams"
+        ],
+        "Resource": [
+          "arn:aws:logs:us-east-1:806869445083:log-group:/eks/jira-to-code",
+          "arn:aws:logs:us-east-1:806869445083:log-group:/eks/jira-to-code:*"
+        ]
+      }
+    ]
   }'
+
 
 kubectl apply -f sa.yaml
 kubectl set serviceaccount deploy/jira-to-code jira-to-code

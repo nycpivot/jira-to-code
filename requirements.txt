@@ -3,3 +3,4 @@ fastapi==0.119.0
 uvicorn[standard]
 pdfminer.six==20231228
 Requests==2.32.5
+watchtower==3.0.1

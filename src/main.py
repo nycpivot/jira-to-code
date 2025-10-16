@@ -3,6 +3,8 @@ import logging, boto3, json, os, base64, pathlib, hmac
 from fastapi import FastAPI, Request, Header, HTTPException
 from functools import lru_cache
 
+from logging_handler import setup_logging
+
 from jira_handler import load_jira
 from jira_handler import add_comment
 
@@ -18,11 +20,10 @@ from codegen_handler import write_code
 
 from github_handler import push_branch_and_open_pr
 
-app = FastAPI(title="jira-to-code")
+setup_logging()
 
-# output to aws cloudwatch
-log = logging.getLogger()
-log.setLevel(logging.INFO)
+app = FastAPI(title="jira-to-code")
+log = logging.getLogger(__name__)
 
 @app.get("/healthz")
 def health():
@@ -48,7 +49,7 @@ async def webhook(
     # # Log everything so you can see it in CloudWatch
     # print("=== Incoming headers ===")
     # log.info(json.dumps(headers, ensure_ascii=False))
-    print("*** Incoming body ***")
+    log.info("*** Incoming body ***")
     log.info(json.dumps(work_item, ensure_ascii=False))
 
 
