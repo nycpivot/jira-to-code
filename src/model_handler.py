@@ -1,4 +1,4 @@
-import logging
+import logging, traceback, re
 
 from textwrap import dedent
 
@@ -9,20 +9,13 @@ from format_handler import pdfs_to_text
 from format_handler import payload_to_chunks
 from format_handler import chunks_to_blocks
 
-from llm_providers.base import LLMProvider
 from llm_providers.llm_factory import get_provider
 
 # output to aws cloudwatch
 log = logging.getLogger(__name__)
 
-def get_system_prompt():
-  # system_prompt = dedent("""
-  #   You are a senior Java developer and application architect, 
-  #   with expertise in examining IRS tax forms and the rules 
-  #   governing the validity between forms.
-  # """).strip()
-
-  system_prompt = dedent("""
+def get_tax_expert_prompt():
+  return dedent("""
     You are an expert tax examiner for the IRS. 
     Your speciality is reading tax forms in JSON 
     format and applying the rules from the official 
@@ -38,13 +31,9 @@ def get_system_prompt():
     you need.
   """).strip()
 
-  return system_prompt
-
 
 def analyze_taxform_payload(work_item_details):
   print("*** Analyzing tax form payload ***")
-
-  system_prompt = get_system_prompt()
 
   payloads = normalize_json(work_item_details.get("payloads"))
   chunks = payload_to_chunks(payloads)
@@ -66,13 +55,24 @@ def analyze_taxform_payload(work_item_details):
     for visual comprehension and effect.
   """).strip()
 
-  full_prompt = chunks_to_blocks(chunks, user_prompt)
+  try:
+    provider = get_provider()
 
-  provider = get_provider()
-  provider.append_user_message(full_prompt)
+    system_message = get_tax_expert_prompt()
+    provider.append_system_message(system_message)
+    
+    full_prompt = chunks_to_blocks(chunks, user_prompt)
+    provider.append_user_message(full_prompt)
 
-  response = provider.generate(
-    request_timeout=900, temperature=0.2, max_tokens=50000)
+    response = provider.generate(
+      request_timeout=900, temperature=0.2, max_tokens=50000)
+  
+  except Exception as e:
+    log.error("Request failed:\n%s", traceback.format_exc())
+    raise HTTPException(
+      status_code=400,
+      detail={"error": str(e), "type": type(e).__name__}
+    )
 
   # append llm's reply to the dialogue
   assistant_message = strip_code_fences(response.text)
@@ -83,8 +83,6 @@ def analyze_taxform_payload(work_item_details):
 
 def analyze_jira_requirements(work_item_details):
   print("*** Analyzing Jira summary and description ***")
-
-  system_prompt = get_system_prompt()
 
   summary = work_item_details.get("summary")
   description = work_item_details.get("description")
@@ -138,10 +136,7 @@ def analyze_jira_requirements(work_item_details):
 def analyze_irs_documents(work_item_details):
   print("*** Analyzing IRS document(s) ***")
 
-  system_prompt = get_system_prompt()
-
   analysis_summary = ""
-  doc_number = 0
 
   pdfs = normalize_pdfs(work_item_details.get("pdfs"))
 
@@ -213,8 +208,6 @@ def analyze_irs_documents(work_item_details):
   return response
 
 def build_code(work_item_details):
-  system_prompt = get_system_prompt()
-
   user_prompt = dedent("""
     You will generate the rules and logic based on the payload, 
     the summary and description recorded by the business analyst in the 
@@ -235,3 +228,74 @@ def build_code(work_item_details):
 
   return response
 
+
+def get_architect_prompt():
+  return dedent("""
+    You are a senior Java developer and application architect, 
+    with expertise in microservices and best practices and patterns. 
+    
+    You are especially skilled in reverse engineering monolithic 
+    applications and code into reusable software components.
+  """).strip()
+
+
+def reverse_code(work_item_details):
+  summary = work_item_details.get("summary")
+  description = work_item_details.get("description")
+
+  code = normalize_json(work_item_details.get("code"))
+  chunks = payload_to_chunks(code)
+
+  user_prompt = dedent(f"""
+    Here is a summary and description of your task:
+    
+    Summary: {summary}
+    Description: {description}
+
+    Return only a JSON object with this structure (the package name should be the same in the included code):
+    {{
+      "files": [
+        {{
+          "path": "relative/path/ClassName.java",
+          "package": "com.example.package",
+          "content": "full Java class code"
+        }}
+      ]
+    }}
+
+    DO NOT tell me what you are going to do before or after in the response. Just give me the JSON only!
+
+    Rules:
+    - Keep imports minimal and correct
+    - Maintain all functionality
+    - Use proper package structure
+    - Include all inner classes as separate files if appropriate
+
+    Monolith:
+    {chunks}
+  """).strip()
+
+  try:
+    provider = get_provider()
+
+    system_message = get_architect_prompt()
+    provider.append_system_message(system_message)
+    
+    full_prompt = chunks_to_blocks(chunks, user_prompt)
+    provider.append_user_message(full_prompt)
+
+    response = provider.generate(
+      request_timeout=900, temperature=0.2, max_tokens=50000)
+    
+    # append llm's reply to the dialogue
+    assistant_message = strip_code_fences(response.text)
+    provider.append_assistant_message(assistant_message)
+
+    return response
+  
+  except Exception as e:
+    log.error("Request failed:\n%s", traceback.format_exc())
+    raise HTTPException(
+      status_code=400, 
+      detail={"error": str(e), "type": type(e).__name__}
+    )

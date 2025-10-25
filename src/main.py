@@ -1,4 +1,4 @@
-import logging, boto3, json, os, base64, pathlib, hmac
+import logging, boto3, json, os, pathlib, hmac, traceback
 
 from fastapi import FastAPI, Request, Header, HTTPException
 from functools import lru_cache
@@ -12,13 +12,15 @@ from model_handler import analyze_taxform_payload
 from model_handler import analyze_irs_documents
 from model_handler import analyze_jira_requirements
 from model_handler import build_code
+from model_handler import reverse_code
 
 from format_handler import strip_code_fences
 from format_handler import codegen_adf
+from format_handler import get_merged_files_json
 
-from codegen_handler import write_code
+from codegen_handler import generate_code
 
-from github_handler import push_branch_and_open_pr
+from github_handler import push_files_to_branch_and_open_pr
 
 setup_logging()
 
@@ -30,8 +32,8 @@ def health():
   return {"ok": True}
 
 
-@app.post("/webhook")
-async def webhook(
+@app.post("/codegen")
+async def gen_code(
   request: Request,
   x_shared_jira_token: str | None = Header(default=None)):
   
@@ -43,14 +45,14 @@ async def webhook(
   try:
     work_item = await request.json()
 
-    # process jira payload
-    work_item_details = load_jira(work_item)
-
     # # Log everything so you can see it in CloudWatch
     # print("=== Incoming headers ===")
     # log.info(json.dumps(headers, ensure_ascii=False))
     log.info("*** Incoming body ***")
     log.info(json.dumps(work_item, ensure_ascii=False))
+
+    # process jira payload
+    work_item_details = load_jira(work_item)
 
 
     # **************************************************************
@@ -115,7 +117,7 @@ async def webhook(
 
     # source code is returned in a zip file as a decoded string
     # print(f"RESPONSE_TO_CODEGEN: {llm_code}")
-    encoded_code = write_code(msg, code_path)
+    encoded_code = generate_code(msg, code_path)
     # print(f"ENCODED JAVA: {encoded_code}")
     # --------------------------------------------------------------
 
@@ -124,7 +126,7 @@ async def webhook(
     # 5) push code to github
     # **************************************************************
     # push generated code to github
-    branch_name, pr_url = push_branch_and_open_pr(
+    branch_name, pr_url = push_files_to_branch_and_open_pr(
       work_item, code_path, model_signature)
 
     adf_body = codegen_adf(branch_name, pr_url)
@@ -133,8 +135,69 @@ async def webhook(
     add_comment(work_item, adf_body, model_signature)
     # --------------------------------------------------------------
 
-  except Exception:
-    raise HTTPException(status_code=400, detail="invalid JSON")
+  except Exception as e:
+    log.error("Request failed:\n%s", traceback.format_exc())
+    raise HTTPException(
+      status_code=400,
+      detail={"error": str(e), "type": type(e).__name__}
+    )
+
+  return {"ok": True, "result": "ok"}
+
+
+@app.post("/coderev")
+async def rev_code(
+  request: Request,
+  x_shared_jira_token: str | None = Header(default=None)):
+  
+  incoming = (x_shared_jira_token or "").strip()
+  expected = _get_expected_token()
+  if not incoming or not expected or not hmac.compare_digest(incoming.lower(), expected.lower()):
+    raise HTTPException(status_code=401, detail="invalid token")
+  
+  try:
+    work_item = await request.json()
+
+    # # Log everything so you can see it in CloudWatch
+    # print("=== Incoming headers ===")
+    # log.info(json.dumps(headers, ensure_ascii=False))
+    log.info("*** Incoming body ***")
+    log.info(json.dumps(work_item, ensure_ascii=False))
+
+    # process jira payload
+    work_item_details = load_jira(work_item)
+
+
+    # **************************************************************
+    # 1) send code to llm for analysis and new code in json
+    # **************************************************************
+    # send first prompt to llm
+    rev_code_response = reverse_code(work_item_details)
+    json_code_only = get_merged_files_json(rev_code_response.text)
+
+    log.info(json_code_only)
+    # --------------------------------------------------------------
+
+
+    # # **************************************************************
+    # # 2) push code to github
+    # # **************************************************************
+    # # push generated code to github
+    # branch_name, pr_url = push_branch_and_open_pr(
+    #   work_item, code_path, model_signature)
+
+    # adf_body = codegen_adf(branch_name, pr_url)
+
+    # # give jira the locations of the branch and pull request
+    # add_comment(work_item, adf_body, model_signature)
+    # # --------------------------------------------------------------
+
+  except Exception as e:
+    log.error("Request failed:\n%s", traceback.format_exc())
+    raise HTTPException(
+      status_code=400,
+      detail={"error": str(e), "type": type(e).__name__}
+    )
 
   return {"ok": True, "result": "ok"}
 

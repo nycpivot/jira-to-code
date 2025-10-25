@@ -19,18 +19,19 @@ class Generation:
 class LLMProvider(ABC):
   def __init__(self, config: ProviderConfig):
     self.config = config
+    self.system_message = None
     self.messages: List[Any] = []
 
   @abstractmethod
+  def append_system_message(self, message):
+    pass
+
+  @abstractmethod
   def append_user_message(self, message):
-    # let inherited llms generate their own message format
-    # according to their respective format
     pass
 
   @abstractmethod
   def append_assistant_message(self, message):
-    # let inherited llms generate their own message format
-    # according to their respective format
     pass
 
   @abstractmethod

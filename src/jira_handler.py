@@ -4,8 +4,7 @@ from format_handler import strip_empty_headings
 from format_handler import wrap_table_text_in_paragraph
 
 # output to aws cloudwatch
-log = logging.getLogger()
-log.setLevel(logging.INFO)
+log = logging.getLogger(__name__)
 
 def load_jira(work_item):
   # read jira body
@@ -17,12 +16,13 @@ def load_jira(work_item):
   description = desc_field if isinstance(desc_field, str) else json.dumps(desc_field or {})
 
   # fetch attachments
-  payloads, pdfs = fetch_jira_attachments(issue_key)
+  payloads, code, pdfs = fetch_jira_attachments(issue_key)
 
   return {
     "summary": summary, 
     "description": description, 
-    "payloads": payloads, 
+    "payloads": payloads,
+    "code": code,
     "pdfs": pdfs
   }
 
@@ -50,7 +50,7 @@ def fetch_jira_attachments(issue_key: str):
   ]
 
   count = len(files)
-  print(f"Found {count} attachment(s)")
+  log.info(f"Found {count} attachment(s)")
 
   # 3) filter irs payloads
   payloads = [
@@ -59,7 +59,14 @@ def fetch_jira_attachments(issue_key: str):
        or (payload.get("filename") or "").lower().endswith((".txt", ".json"))
   ]
 
-  # 4) convert pdfs to bytes
+  # 4) filter code
+  code = [
+    c for c in files
+    if (c.get("mimeType") or "").lower() in ("text/plain")
+       or (c.get("filename") or "").lower().endswith((".java"))
+  ]
+
+  # 5) convert pdfs to bytes
   pdfs = [
     {"filename": f.get("filename") or "irs.pdf", "bytes": f.get("bytes")}
     for f in files
@@ -67,7 +74,7 @@ def fetch_jira_attachments(issue_key: str):
        or (f.get("filename") or "").lower().endswith(".pdf")
   ]
 
-  return payloads, pdfs
+  return payloads, code, pdfs
 
 
 def add_comment(work_item, comments: str, model_signature: str):

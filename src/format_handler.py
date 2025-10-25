@@ -268,3 +268,31 @@ def codegen_adf(branch_name: str, pr_url: str) -> dict:
     ]
   }
 
+
+def get_merged_files_json(text: str) -> str:
+    objs = _extract_all_json_blocks(text)
+    if not objs:
+        raise ValueError("No JSON blocks found.")
+    merged = _merge_files_arrays(objs)
+    return json.dumps(merged, ensure_ascii=False, indent=2)
+
+
+def _extract_all_json_blocks(text: str):
+    blocks = re.findall(r"```json\s*([\s\S]*?)\s*```", text, flags=re.IGNORECASE)
+    out = []
+    for b in blocks:
+        b = b.replace("\u200b","").replace("\ufeff","").strip()
+        try:
+            out.append(json.loads(b))
+        except json.JSONDecodeError:
+            # ignore non-JSON blocks or partials
+            pass
+    return out
+
+def _merge_files_arrays(json_objs):
+    merged = {"files": []}
+    for obj in json_objs:
+        files = obj.get("files")
+        if isinstance(files, list):
+            merged["files"].extend(files)
+    return merged

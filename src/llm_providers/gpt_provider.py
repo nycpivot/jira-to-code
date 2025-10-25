@@ -15,6 +15,9 @@ class GptProvider(LLMProvider):
       "Authorization": f"Bearer {self.config.api_key}",
       "Content-Type": "application/json"
     }
+  
+  def append_system_message(self, message):
+    self.messages.append({"role": "system", "content": message})
 
   def append_user_message(self, message):
     self.messages.append({"role": "user", "content": message})

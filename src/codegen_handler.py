@@ -3,7 +3,7 @@ import pathlib, re, json, base64, shutil
 CODEGEN_ROOT = pathlib.Path("/tmp/codegen")
 FENCE_START = re.compile(r"```json\s*", re.I)
 
-def write_code(msg: dict, code_path: pathlib.Path = CODEGEN_ROOT) -> list[str]:
+def generate_code(msg: dict, code_path: pathlib.Path = CODEGEN_ROOT) -> list[str]:
   # 1) gather text blocks
   blocks = [b.get("text","") for b in (msg.get("content") or []) if b.get("type")=="text"]
   if not blocks:

@@ -16,6 +16,9 @@ class ClaudeProvider(LLMProvider):
       "anthropic-version": "2023-06-01",
       "content-type": "application/json"
     }
+  
+  def append_system_message(self, message):
+    self.system_message = message
 
   def append_user_message(self, message):
     self.messages.append({"role": "user", "content": message})
@@ -24,8 +27,8 @@ class ClaudeProvider(LLMProvider):
     self.messages.append({"role": "assistant", "content": message})
 
   def generate(self, request_timeout: int = 500, **params) -> Generation:
-    payload = {"model": self.config.model, "messages": self.messages}
-    print(f"MESSAGE COUNT: {len(self.messages)}")
+    payload = {"model": self.config.model, "system": self.system_message, "messages": self.messages}
+
     ALLOWED = {
       "temperature","top_p","max_tokens","n","stop",
       "presence_penalty","frequency_penalty","logit_bias",
